@@ -1,0 +1,92 @@
+﻿@model Blazor.UI.Shared.CustomerBank
+
+@{
+    ViewData["Title"] = "BankDetails";
+    Layout = "~/Views/Shared/_LayoutDash.cshtml";
+}
+
+
+<!-- Header -->
+<div class="header pb-6 d-flex align-items-center" style="min-height: 500px; background-image: url(../assetsdash/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+    <!-- Mask -->
+    <span class="mask bg-gradient-default opacity-8"></span>
+    <!-- Header container -->
+    <div class="container-fluid d-flex align-items-center">
+        <div class="row">
+            <div class="col-lg-7 col-md-10">
+                <h1 class="display-2 text-white">@Model.BankName</h1>
+                <p class="text-white mt-0 mb-5">This is your bank page. You can set the datails about your bank so that you can recieve your money upon checkout.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col-xl-12 order-xl-1">
+            <div class="card">
+                <div class="card-body">
+                    <form asp-action="UpdateBank">
+                        <input type="hidden" asp-for="BankId" />
+                        <h6 class="heading-small text-muted mb-4">Bank information</h6>
+                        <div class="pl-lg-4">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="ShopName">Bank Name</label>
+                                        <input type="text" class="form-control" asp-for="BankName">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Branch</label>
+                                        <input asp-for="Branch" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label asp-for="AccountNumber" class="control-label">Account Number</label>
+                                        <input asp-for="AccountNumber" class="form-control" />
+                                        <span asp-validation-for="AccountNumber" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label asp-for="AccountName" class="control-label">Account Name</label>
+                                        <input asp-for="AccountName" class="form-control" />
+                                        <span asp-validation-for="AccountName" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label asp-for="AccountPhone" class="control-label">Phone Number</label>
+                                    <input asp-for="AccountPhone" class="form-control" />
+                                    <span asp-validation-for="AccountPhone" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label asp-for="AccountEmail" class="control-label">Email</label>
+                                    <input asp-for="AccountEmail" class="form-control" />
+                                    <span asp-validation-for="AccountEmail" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <hr class="my-4" />
+                        <input type="submit" value="Save" class="btn btn-block btn-primary" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Blazor.UI.Shared.PaymentDetail>
+
+<div class="col-xl-12">
+    <div class="card">
+        <div class="card-header border-0">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="mb-0">New Transactions</h3>
+                </div>
+                <div class="col text-right">
+                    <a href="#" class="btn btn-sm btn-primary">See all</a>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TransactionReference)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CurrencyCode)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Amount)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ShopName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PaymentStatus)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PaymentMethod)
+                        </th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TransactionReference)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CurrencyCode)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Amount)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ShopName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PaymentStatus)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PaymentMethod)
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>

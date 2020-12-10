@@ -1,0 +1,63 @@
+﻿@model Blazor.UI.Shared.CustomerWallet
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>CustomerWallet</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ShopId" class="control-label"></label>
+                <input asp-for="ShopId" class="form-control" />
+                <span asp-validation-for="ShopId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OldBalance" class="control-label"></label>
+                <input asp-for="OldBalance" class="form-control" />
+                <span asp-validation-for="OldBalance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewBalance" class="control-label"></label>
+                <input asp-for="NewBalance" class="form-control" />
+                <span asp-validation-for="NewBalance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ActionMade" class="control-label"></label>
+                <input asp-for="ActionMade" class="form-control" />
+                <span asp-validation-for="ActionMade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StatusMessage" class="control-label"></label>
+                <input asp-for="StatusMessage" class="form-control" />
+                <span asp-validation-for="StatusMessage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedOn" class="control-label"></label>
+                <input asp-for="CreatedOn" class="form-control" />
+                <span asp-validation-for="CreatedOn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UpdatedOn" class="control-label"></label>
+                <input asp-for="UpdatedOn" class="form-control" />
+                <span asp-validation-for="UpdatedOn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

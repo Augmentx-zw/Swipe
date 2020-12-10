@@ -1,0 +1,29 @@
+﻿@model dynamic
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutDash.cshtml";
+}
+<div class="header bg-primary pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                
+            </div>
+            @{
+                await Html.RenderPartialAsync("Stats");
+            }
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt--7">
+    <div class="row mt-5">
+        <div class="col-xl-12 mb-5 mb-xl-0">
+            @{
+                    await Html.RenderPartialAsync("TopReports");
+                }
+        </div>
+    </div>
+</div>
+

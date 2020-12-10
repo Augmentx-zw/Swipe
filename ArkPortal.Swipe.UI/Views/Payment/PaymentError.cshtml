@@ -1,0 +1,44 @@
+﻿@model Blazor.UI.Shared.PaymentDetail
+
+@{
+    ViewData["Title"] = "PaymentError";
+}
+<div class="section section-hero section-shaped my-0">
+    <div class="shape shape-style-1 shape-default">
+        <span class="span-150"></span>
+        <span class="span-50"></span>
+        <span class="span-50"></span>
+        <span class="span-75"></span>
+        <span class="span-100"></span>
+        <span class="span-75"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+    </div>
+    <div class="container shape-container d-flex align-items-center">
+        <div class="col px-0">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-7 text-center pt-lg my-7">
+                    <img src="~/assets/img/brand/white.png" style="width: 200px;" class="img-fluid">
+                    <p class="lead text-white mt-4">A modern payment gateway that is easy to integrate</p>
+                    <div class="btn-wrapper">
+                        <a href="#" class="btn btn-mb btn-white btn-icon mb-3 mb-sm-0">
+                            <span class="btn-inner--icon"><i class="ni ni-single-02"></i></span>
+                            <span class="btn-inner--text"> Login</span>
+                        </a>
+                        <a href="#" class="btn btn-mb btn-info btn-icon mb-3 mb-sm-0" target="_blank">
+                            <span class="btn-inner--icon"><i class="fa fa-code"></i></span>
+                            <span class="btn-inner--text">Register</span>
+                        </a>
+                        <div class="m-7"> </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>swal("@Model.PaymentStatus", "You will be redirected in a few seconds", "error");</script>
+

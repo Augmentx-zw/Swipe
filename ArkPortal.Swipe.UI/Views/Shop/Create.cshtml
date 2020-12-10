@@ -1,0 +1,98 @@
+﻿@model Blazor.UI.Shared.CustomerShop
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<section class="section section-shaped section-lg">
+    <div class="shape shape-style-1 bg-gradient-info">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="container-fluid pt-lg-7">
+        <div class="row justify-content-center">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-body">
+                        <form asp-action="Create">
+                            <h6 class="heading-small text-muted mb-4">Company information</h6>
+                            <div class="pl-lg-4">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="ShopName">Shop Name</label>
+                                            <input type="text" class="form-control" asp-for="ShopName">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="form-control-label">Shop Email</label>
+                                            <input asp-for="ShopEmail" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label asp-for="ShopPhone" class="control-label"></label>
+                                            <input asp-for="ShopPhone" class="form-control" />
+                                            <span asp-validation-for="ShopPhone" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label asp-for="ShopLink" class="control-label"></label>
+                                            <input asp-for="ShopLink" class="form-control" />
+                                            <span asp-validation-for="ShopLink" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="my-4" />
+                            <!-- Address -->
+                            <h6 class="heading-small text-muted mb-4">Address information</h6>
+                            <div class="pl-lg-4">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label asp-for="ShopCountry" class="control-label"></label>
+                                            <input asp-for="ShopCountry" class="form-control" />
+                                            <span asp-validation-for="ShopCountry" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label asp-for="ShopRegistrationNumber" class="control-label"></label>
+                                            <input asp-for="ShopRegistrationNumber" class="form-control" />
+                                            <span asp-validation-for="ShopRegistrationNumber" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="form-control-label">Shop Address</label>
+                                            <textarea rows="4" asp-for="ShopAddress" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="my-4" />
+                            <!-- Description -->
+                            <input type="submit" value="Save" class="btn btn-block btn-primary" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

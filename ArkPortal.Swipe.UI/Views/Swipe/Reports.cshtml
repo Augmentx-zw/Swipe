@@ -1,0 +1,91 @@
+﻿@model IEnumerable<PaymentDetail>
+
+@{
+    ViewData["Title"] = "Reports";
+    Layout = "~/Views/Shared/_LayoutDash.cshtml";
+}
+
+<div class="header bg-primary pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                
+            </div>
+            @{
+                await Html.RenderPartialAsync("Stats", new CustomerShop() { ShopId = ViewBag.ShopId });
+            }
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt--7">
+    <div class="row mt-5">
+        <div class="col-xl-12 mb-5 mb-xl-0">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-header border-0">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h3 class="mb-0">Transactions</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TransactionReference)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.CurrencyCode)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Amount)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ShopName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.PaymentStatus)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.PaymentMethod)
+                                    </th>
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TransactionReference)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CurrencyCode)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Amount)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ShopName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.PaymentStatus)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.PaymentMethod)
+                                        </td>
+
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
